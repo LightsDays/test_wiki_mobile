@@ -29,6 +29,9 @@ class WikipediaApp:
         search_field = browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/nav_tab_search"))
         search_field.with_(timeout=10).should(be.visible).click()
 
+        search_field = browser.element((AppiumBy.ACCESSIBILITY_ID, "Search Wikipedia"))
+        search_field.with_(timeout=10).should(be.visible).click()
+
         search_input = browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/search_src_text"))
         search_input.type(text)
         time.sleep(2)
