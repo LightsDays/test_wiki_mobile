@@ -1,0 +1,9 @@
+Appium-Python-Client==4.0.0
+pytest==9.0.3
+selene==2.0.0rc10
+selenium==4.44.0
+allure-pytest==2.16.0
+requests
+python-dotenv~=1.1.1
+pydantic
+pydantic-settings

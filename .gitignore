@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.selenium/
+
+# Allure
+allure-results/
+allure-report/
+*.xml
+*.json
+
+# Environment variables with secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+pytest.log
+
+# BrowserStack
+browserstack-local
+browserstack-local-jar
+
+# OS
+Thumbs.db
+desktop.ini
+
+# Project specific
+*.apk
+*.ipa
+screenshots/
+videos/
+
