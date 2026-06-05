@@ -51,26 +51,12 @@ class WikipediaApp:
 
     @allure.step("Проверка, что страница статьи открыта")
     def article_should_be_opened(self) -> WikipediaApp:
-        # Проверяем, что открылась страница статьи
-        time.sleep(3)
         page_source = browser.config.driver.page_source
 
-        # Сохраняем для анализа
-        with open("article_page.xml", "w", encoding="utf-8") as f:
-            f.write(page_source)
-
-        # Проверяем наличие признаков статьи
         article_indicators = ["WebView", "TextView", "page_title", "article"]
 
-        found = False
-        for indicator in article_indicators:
-            if indicator in page_source:
-                print(f"✅ Найден индикатор статьи: {indicator}")
-                found = True
-                break
-
-        if not found:
-            raise AssertionError("Article page not opened")
+        # Проверяем наличие признаков статьи
+        assert any(indicator for indicator in article_indicators if indicator in page_source), 'Статья не найдена'
 
         return self
 
