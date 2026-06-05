@@ -1,7 +1,4 @@
-from __future__ import annotations
-
 import os
-from pathlib import Path
 
 from pydantic_settings import BaseSettings
 from appium.options.android import UiAutomator2Options
