@@ -3,7 +3,7 @@ pytest==9.0.3
 selene==2.0.0rc10
 selenium==4.44.0
 allure-pytest==2.16.0
-requests
+requests==2.34.2
 python-dotenv~=1.1.1
-pydantic
-pydantic-settings
+pydantic==2.13.4
+pydantic-settings==2.14.1

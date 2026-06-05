@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import allure
 from appium.webdriver.common.appiumby import AppiumBy
 from selene import have, be
@@ -10,17 +8,11 @@ import time
 class WikipediaApp:
     @allure.step("Закрыть всплывающие окна")
     def close_onboarding(self) -> WikipediaApp:
-        for i in range(4):
-            skip_button = browser.element((AppiumBy.CLASS_NAME, "android.widget.Button"))
-            skip_button.with_(timeout=10).should(be.visible).click()
-        # skip_button = browser.element((AppiumBy.XPATH, "//android.widget.Button[@text='Skip']"))
-        # skip_button.with_(timeout=10).should(be.visible).click()
+        skip_button = browser.element((AppiumBy.CLASS_NAME, "android.widget.Button"))
+        skip_button.with_(timeout=10).should(be.visible).click()
 
-        try:
-            close_button = browser.element((AppiumBy.ACCESSIBILITY_ID, "Close"))
-            close_button.with_(timeout=3).click()
-        except Exception:
-            pass
+        close_button = browser.element((AppiumBy.ACCESSIBILITY_ID, "Close"))
+        close_button.with_(timeout=3).click()
 
         return self
 
@@ -34,7 +26,6 @@ class WikipediaApp:
 
         search_input = browser.element((AppiumBy.ID, "org.wikipedia.alpha:id/search_src_text"))
         search_input.type(text)
-        time.sleep(2)
 
         return self
 
